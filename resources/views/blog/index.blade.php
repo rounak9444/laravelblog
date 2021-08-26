@@ -45,7 +45,37 @@
               <p class="font-bold">{{ $post->description }}</p>
              </div>
                 <a href="/blog/{{ $post->slug }}" class="text-bold text-2xl text-white bg-blue-900 p-2 ml-40 rounded-3xl">READ MORE</a>
-         </div>
+         
+              @if(isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
+                
+                <span class="float-right">
+                    <a href="/blog/{{ $post->slug }}/edit" class="text-black">
+                        Edit Post
+                    </a>
+
+                    <span class="float-right">
+                     <form 
+                        action="/blog/{{ $post->slug }}"
+                        method="POST">
+                        @csrf
+                        @method('delete')
+
+                        <button
+                            class="text-red-500 pr-3"
+                            type="submit">
+                            Delete
+                        </button>
+
+                    </form>
+                </span>
+
+              </span>
+
+
+              @endif               
+         
+         
+            </div>
 
     
 </div>
