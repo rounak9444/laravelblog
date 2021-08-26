@@ -110,9 +110,10 @@ class PostController extends Controller
             'user_id' => auth()->user()->id,
 
 
-        ])
+        ]);
 
-        return redirect('/blog')->with('message', 'your post has been updated');
+        return redirect('/blog')
+            ->with('message', 'Your post has been updated');
     }
 
     /**
