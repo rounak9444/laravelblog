@@ -38,9 +38,9 @@ class PostController extends Controller
     {
         $request->validate([
           
-            'title'=>'required',
-            'description'=>'required',
-            'image'=>'required|mimes:jpeg,png,jpg'
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required|mimes:jpeg,png,jpg'
         ]);
 
         $newImageName = uniqid(). '-' .$request->image->extension();
@@ -52,7 +52,7 @@ class PostController extends Controller
         Post::create([
            
             'title' => $request->input('title'),
-            'description' => $request->input('desciption'),
+            'description' => $request->input('description'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'image_path' =>  $newImageName,
             'user_id' => auth()->user()->id,
@@ -71,6 +71,7 @@ class PostController extends Controller
     public function show($slug)
     {
         return view('blog.show')->with('post', Post::where('slug', $slug)->first());
+        
     }
 
     /**
@@ -95,21 +96,16 @@ class PostController extends Controller
     {
 
         $request->validate([
-          
-            'title'=>'required',
-            'description'=>'required',
-            
-        ]);
-
-
-        Post::where('slug', $slug)->update([
-
+            'title' => 'required',
+            'description' => 'required',
+             ]);
+       
+             Post::where('slug', $slug)
+          ->update([
             'title' => $request->input('title'),
-            'description' => $request->input('desciption'),
+            'description' => $request->input('description'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'user_id' => auth()->user()->id,
-
-
         ]);
 
         return redirect('/blog')

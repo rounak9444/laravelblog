@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class=" bg-local bg-cover grid grid-cols-1 m-auto" style="background-image: url(https://cdn.pixabay.com/photo/2018/05/14/16/54/cyber-3400789_1280.jpg)>
+<div class=" bg-local bg-cover grid grid-cols-1 m-auto" style="background-image: url(https://cdn.pixabay.com/photo/2018/05/14/16/54/cyber-3400789_1280.jpg)">
         <div class="flex text-gray-100 pt-10">
             <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
                 <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
@@ -97,5 +97,12 @@
             <img src="https://dtechsystem.net/wp-content/uploads/2019/07/images-2.jpg" alt="">
         </div>
     </div>
+
+
+ 
+
+
+
+</div>
 
 @endsection

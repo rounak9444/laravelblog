@@ -8,6 +8,13 @@
 </div>
 
 
+<div>
+    
+<img src="{{ asset('images/' . $post->image_path) }}" alt="">
+      
+</div>
+
+
 
 <div class="w-4/5 m-auto pt-20">
 

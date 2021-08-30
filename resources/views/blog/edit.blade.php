@@ -9,11 +9,13 @@
 
 
 
+
+/*
 <div class="w-4/5 m-auto pt-20">
 
-<form action="/blog{{ $post->slug }}" method="POST" enctype="multipart/form-data">
+<form action="/blog/{{ $post->slug }}" method="POST" enctype="multipart/form-data">
 @csrf
-@method('put')
+@method('PUT')
 
 <lable class="text-bold text-5xl text-black"> Enter Your Post Title
 <input 
@@ -44,7 +46,7 @@
 
 
 </div>
-
+*/
 
 
 
